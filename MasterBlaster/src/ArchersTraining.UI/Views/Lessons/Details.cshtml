@@ -1,0 +1,87 @@
+﻿@model ArchersTraining.DATA.Lesson
+
+@{
+    ViewBag.Title = "Lesson Material";
+}
+
+<div class="main">
+    <div class="container">
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+            <!-- BEGIN CONTENT -->
+            <div class="col-md-12">
+
+
+                <div class="content-page">
+
+
+                    <div class="search-result-item">
+                        <h4 style="color: #E6400C; font-size: 17px;">
+                            @Html.DisplayFor(model => model.LessonName)
+                        </h4>
+                        <p>@Html.DisplayNameFor(model => model.PdfFileName): <a href="@Url.Content("~/Content/LessonPdf/" + @Html.DisplayFor(model => model.PdfFileName))" target="_blank">Lesson PDF</a></p>
+
+
+                        @if (@Model.VideoUrl != null)
+                        {
+                            string[] embed = @Model.VideoUrl.Split('=');
+
+                            <p class="youtubeIcon">
+                                <a onclick="changeVideo('@embed[1]')"><img src="~/Content/assets/pages/img/youtube_icon.png" alt="Video Icon"></a>
+                            </p>
+                        }
+
+                        <p><a class="youtubeIcon"></a></p>
+
+                        <p>Complete: @Html.DisplayFor(model => model.IsActive)</p>
+
+                        <p>
+                            @Html.ActionLink("Back to Lessons", "LessonbyCourse", new { id = Model.CourseID }) 
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- END CONTENT -->
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <iframe id="iframeYoutube" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $("#myModal").on("hidden.bs.modal", function () {
+                $("#iframeYoutube").attr("src", "#");
+            })
+        })
+
+        function changeVideo(vId) {
+            var iframe = document.getElementById("iframeYoutube");
+            iframe.src = "https://www.youtube.com/embed/" + vId;
+
+            $("#myModal").modal("show");
+        }
+    </script>
+}

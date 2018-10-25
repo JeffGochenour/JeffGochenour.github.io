@@ -1,0 +1,87 @@
+﻿@model ArchersTraining.UI.Models.ContactViewModel
+@{
+    ViewBag.Title = "Contact";
+}
+
+@section css {
+    <link href="@Url.Content("~/Content/assets/plugins/fancybox/source/jquery.fancybox.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/assets/plugins/uniform/css/uniform.default.css")" rel="stylesheet">
+}
+
+<div id="contact-page" class="container">
+    <div class="bg">
+        <div class="row margin-bottom-40">
+            <!-- BEGIN CONTENT -->
+            <div class="col-md-12">
+                <h1>Contact</h1>
+                <div class="content-page">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="gmap" class="contact-map google-maps" style="height:400px;">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3107.6962400227694!2d-104.79788998465138!3d38.839416979579696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x871345a7ae64eebf%3A0xc5a3ee05da14ea12!2sU.S.+Olympic+Training+Center!5e0!3m2!1sen!2sus!4v1508340542477" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-9">
+                            <h2>Contact Form</h2>
+                            <p>Any questions? Send us an email and we'll get back to you with answers!</p>
+
+                            <!-- BEGIN FORM-->
+                            <form action="~/Home/Contact" id="main-contact-form" class="contact-form row" name="contact-form" method="post">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control" placeholder="Name">
+                                    @Html.ValidationMessageFor(x => x.Name)
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="email" class="form-control" placeholder="Email">
+                                    @Html.ValidationMessageFor(x => x.Email)
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="subject" class="form-control" placeholder="Subject">
+                                    @Html.ValidationMessageFor(x => x.Subject)
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="message" id="message" class="form-control" rows="8" placeholder="Your Message Here"></textarea>
+                                    @Html.ValidationMessageFor(x => x.Message)
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <input type="submit" name="submit" class="btn btn-success" value="Send">
+                                </div>
+
+                            </form>
+                            <!-- END FORM-->
+                        </div>
+                        <div class="col-md-3 col-sm-3 sidebar2">
+                            <h2>Our Contacts</h2>
+                            <address>
+                                <strong>U.S. Olympic Training Center</strong><br>
+                                #1 Archery Plaza<br>
+                                Center X, Mo 300X<br>
+                                <abbr title="Phone">P:</abbr> (816) 456-2011
+                            </address>
+                            <address>
+                                <strong>Email</strong><br>
+                                <p>Email: jeffgochenour@outlook.com</p>
+                            </address>
+                            <ul class="social-icons margin-bottom-40">
+                                <li><a href="javascript:;" data-original-title="facebook" class="facebook"></a></li>
+                                <li><a href="javascript:;" data-original-title="github" class="github"></a></li>
+                                <li><a href="javascript:;" data-original-title="Goole Plus" class="googleplus"></a></li>
+                                <li><a href="javascript:;" data-original-title="linkedin" class="linkedin"></a></li>
+                                <li><a href="javascript:;" data-original-title="rss" class="rss"></a></li>
+                            </ul>
+                            <h2 class="padding-top-30">About Us</h2>
+                            <p>Archery Training's goal is to create an inspiring training and practicing environment for Junior Olympic Archers and FITA target archers.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-check"></i> Beginner to Advanced</li>
+                                <li><i class="fa fa-check"></i> Tournament Prep </li>
+                                <li><i class="fa fa-check"></i> Mental Training</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END CONTENT -->
+        </div>
+    </div>
+</div>
+

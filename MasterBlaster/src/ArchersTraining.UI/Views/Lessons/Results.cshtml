@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "Results";
+}
+
+
+
+<div class="main">
+    <div class="container">
+
+        <!-- BEGIN CONTENT -->
+        <div class="row margin-bottom-40">
+            <!-- BEGIN CONTENT -->
+            <div class="col-md-12 col-sm-12 col-center">
+                <div class="content-page">
+                    <div class="row margin-bottom-40">
+                        <!-- Pricing -->
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <div class="pricing hover-effect">
+                                <div class="pricing-head pricing-head-active">
+                                    <h3>
+                                        Quiz Results
+                                    </h3>
+                                    <h4></h4>
+                                    <h3>Your Grade:</h3>
+                                    <h4 id="percentGrade"><i>%</i></h4>
+
+                                </div>
+                                <ul class="pricing-content list-unstyled">
+                                    <li>
+                                        <i class="fa fa-check-square"></i> Answered Correctly:
+                                    </li>
+                                    <li id="correct"></li>
+                                    <li>
+                                        <i class="fa fa-exclamation-triangle"></i> Answered Incorrectly:
+                                    </li>
+                                    <li id="incorrect"></li>
+                                </ul>
+                                <div class="pricing-footer">
+                                    <p>
+
+                                    </p>
+                                    <a onClick="history.go(-1)" class="btn btn-primary" id="failing">
+                                        Retake the Quiz <i class="m-icon-swapright m-icon-white"></i>
+                                    </a>
+
+                                    @Html.ActionLink("Course Completed", "QuizUpdate", "CourseCompletions", new { id = - 1 }, new {@id="PassValue" })<i class="m-icon-swapright m-icon-white"></i>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                        <!--//End Pricing -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END CONTENT -->
+    </div>
+</div>
+
+
+<script src="~/Scripts/quizconfig.js"></script>
+<script>
+
+    // Begin Passed Id into url
+    var elem = $('#PassValue');
+   
+    var passedValue = $.cookie("courseId");
+    var newUrl = elem.prop('href').replace('-1', passedValue);
+    elem.prop('href', newUrl);
+    elem.addClass('btn btn-primary');
+    // End Passed
+
+    var wrong = 0
+    document.getElementById("correct").innerHTML = '';
+    document.getElementById("incorrect").innerHTML = '';
+    document.getElementById("percentGrade").innerHTML = '';
+
+    var results = document.cookie.split(";")
+    for (n = 0; n <= results.length - 1; n++) {
+        if (results[n].charAt(1) == 'q')
+            parse = n
+
+    }
+    
+    var incorrect = results[parse].split("=")
+    incorrect = incorrect[1].split("/")
+    if (incorrect[incorrect.length - 1] == 'b')
+        incorrect = ""
+    document.getElementById("correct").innerHTML = totalquestions - incorrect.length + " out of " + totalquestions
+    document.getElementById("percentGrade").innerHTML = (totalquestions - incorrect.length) / totalquestions * 100 + "%"
+    for (temp = 0; temp < incorrect.length; temp++)
+        document.getElementById("incorrect").innerHTML += incorrect[temp] + ", ";
+    var final = (totalquestions - incorrect.length) / totalquestions * 100;
+    if (final < 75) {
+        $('#PassValue').remove();
+    }
+    else {
+        $('#failing').remove();
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+

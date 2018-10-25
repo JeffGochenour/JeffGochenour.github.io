@@ -1,0 +1,109 @@
+﻿@model IEnumerable<ArchersTraining.DATA.LessonView>
+
+@{
+    ViewBag.Title = "Viewed Lessons";
+}
+
+@section css {
+    <link href="@Url.Content("~/Content/assets/plugins/fancybox/source/jquery.fancybox.css")" rel="stylesheet">
+    <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+}
+
+
+<div class="main">
+    <div class="container">
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+            <!-- BEGIN CONTENT -->
+            <div class="col-md-12">
+                <h2>@ViewBag.Title</h2>
+                <p>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("New Record", "Create")
+                    }
+                </p>
+                <table id="LessonCompTable" class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Lesson.LessonName)
+                            </th>
+                            @*<th>
+                                @Html.DisplayNameFor(model => model.Lesson.CourseID)
+                            </th>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.AspNetUser.FirstName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateViewed)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Lesson.LessonName)
+                                </td>
+                                @*<td>
+                                    @Html.DisplayFor(modelItem => item.Lesson.CourseID)
+                                </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AspNetUser.FirstName) @Html.DisplayFor(modelItem => item.AspNetUser.LastName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateViewed)
+                                </td>
+                                <td>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <p>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.LessonViewID }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.LessonViewID }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.LessonViewID })
+                                        </p>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+                @*<div class="content-page">
+                        @foreach (var item in Model)
+                        {
+
+                            <div class="search-result-item">
+                                <h4><a href="javascript:;">@Html.DisplayFor(modelItem => item.Lesson.LessonName)</a></h4>
+                                <p>@Html.DisplayFor(modelItem => item.AspNetUser.FirstName) @Html.DisplayFor(modelItem => item.AspNetUser.LastName)</p>
+                                <p>@Html.DisplayNameFor(model => model.DateViewed): @Html.DisplayFor(modelItem => item.DateViewed)</p>
+                                <p>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                    <a>@Html.ActionLink("Edit", "Edit", new { id = item.LessonViewID }) |</a>
+                                    <a>@Html.ActionLink("Details", "Details", new { id = item.LessonViewID }) |</a>
+                                    <a>@Html.ActionLink("Delete", "Delete", new { id = item.LessonViewID })</a>
+                                    }
+                                </p>
+                            </div>
+
+                                    }
+                    </div>*@
+            </div>
+            <!-- END CONTENT -->
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#LessonCompTable').DataTable();
+        });
+    </script>
+}

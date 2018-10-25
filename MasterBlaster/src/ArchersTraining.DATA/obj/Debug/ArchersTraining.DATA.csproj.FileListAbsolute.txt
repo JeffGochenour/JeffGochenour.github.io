@@ -1,0 +1,10 @@
+C:\jeffandbrianTFS\MasterBlaster\src\ArchersTraining.DATA\bin\Debug\ArchersTraining.DATA.dll.config
+C:\jeffandbrianTFS\MasterBlaster\src\ArchersTraining.DATA\bin\Debug\ArchersTraining.DATA.dll
+C:\jeffandbrianTFS\MasterBlaster\src\ArchersTraining.DATA\bin\Debug\ArchersTraining.DATA.pdb
+C:\jeffandbrianTFS\MasterBlaster\src\ArchersTraining.DATA\bin\Debug\EntityFramework.dll
+C:\jeffandbrianTFS\MasterBlaster\src\ArchersTraining.DATA\bin\Debug\EntityFramework.SqlServer.dll
+C:\jeffandbrianTFS\MasterBlaster\src\ArchersTraining.DATA\bin\Debug\EntityFramework.xml
+C:\jeffandbrianTFS\MasterBlaster\src\ArchersTraining.DATA\bin\Debug\EntityFramework.SqlServer.xml
+C:\jeffandbrianTFS\MasterBlaster\src\ArchersTraining.DATA\obj\Debug\ArchersTraining.DATA.csprojResolveAssemblyReference.cache
+C:\jeffandbrianTFS\MasterBlaster\src\ArchersTraining.DATA\obj\Debug\ArchersTraining.DATA.dll
+C:\jeffandbrianTFS\MasterBlaster\src\ArchersTraining.DATA\obj\Debug\ArchersTraining.DATA.pdb

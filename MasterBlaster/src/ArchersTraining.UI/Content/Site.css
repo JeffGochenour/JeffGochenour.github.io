@@ -1,0 +1,163 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+a.btn {
+    background-color: buttonface;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*added 10/18/2017*/
+/*google map*/
+.google-maps {
+    position: relative;
+    overflow: hidden;
+}
+
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+.contact-map {
+    width: 100%;
+    height: 385px;
+    margin-bottom: 70px;
+}
+
+/*form*/
+.contact-form .heading {
+    text-transform: capitalize;
+}
+
+#contact-page .form-control {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #696763;
+    height: 46px;
+    padding: 6px 12px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#contact-page #message {
+    height: 160px;
+    resize: none;
+}
+
+#contact-page .form-control:focus,
+#contact-page .form-control:hover {
+    border-color: #FDB45E;
+}
+
+
+
+/* Quiz Pages */
+
+.qselections {
+    padding-left: 2em;
+}
+
+.qheader {
+    font-size: 1.2em;
+    padding-top: 1em;
+}
+
+.qselections label {
+    padding: .2em;
+    font-weight: 700;
+}
+
+/*body {
+background: url(../Content/assets/pages/img/background-archery-image.jpg);
+background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main .container {
+    background-color: #fff;
+}*/
+
+.main {
+    padding-top: 2em;
+}
+
+/*p.youtubeIcon {
+    height: 90px;
+    width: 128px;
+}*/
+
+.youtubeIcon a {
+    cursor: grab;
+}
+
+.vertical-alignment-helper {
+    display: table;
+    height: 100%;
+    width: 100%;
+    pointer-events: none; /* This makes sure that we can still click outside of the modal to close it */
+}
+
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width: inherit;
+    height: inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+    pointer-events: all;
+}
+
+.boxed {
+    border: 1.5px solid red;
+    margin-bottom: 15px;
+}

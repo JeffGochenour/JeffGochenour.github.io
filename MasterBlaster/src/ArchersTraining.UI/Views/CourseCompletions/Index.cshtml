@@ -1,0 +1,100 @@
+﻿@model IEnumerable<ArchersTraining.DATA.CourseCompletion>
+
+@{
+    ViewBag.Title = "Course Completions";
+}
+
+
+@section css {
+    <link href="@Url.Content("~/Content/assets/plugins/fancybox/source/jquery.fancybox.css")" rel="stylesheet">
+    <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+}
+
+
+<div class="main">
+    <div class="container">
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+            <!-- BEGIN CONTENT -->
+            <div class="col-md-12">
+                <h2>@ViewBag.Title</h2>
+                <p>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("New Record", "Create")
+                    }
+                </p>
+                <table id="CourseCompTable" class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Cours.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AspNetUser.FirstName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateCompleted)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cours.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AspNetUser.FirstName) @Html.DisplayFor(modelItem => item.AspNetUser.LastName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateCompleted)
+                                </td>
+                                <td>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <p>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.CourseCompletionID }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.CourseCompletionID })|
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.CourseCompletionID })
+                                        </p>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                @*<div class="content-page">
+                        @foreach (var item in Model)
+                        {
+
+                            <div class="search-result-item">
+                                <h4><a href="javascript:;">@Html.DisplayFor(modelItem => item.Cours.Name)</a></h4>
+                                <p>@Html.DisplayFor(modelItem => item.AspNetUser.FirstName)@Html.DisplayFor(modelItem => item.AspNetUser.LastName) </p>
+                                <p>@Html.DisplayNameFor(model => model.DateCompleted): @Html.DisplayFor(modelItem => item.DateCompleted)</p>
+                                @if (User.IsInRole("Admin"))
+                                {<p>
+                                                    @Html.ActionLink("Edit", "Edit", new { id = item.CourseCompletionID }) |
+                                                    @Html.ActionLink("Details", "Details", new { id = item.CourseCompletionID }) |
+                                                    @Html.ActionLink("Delete", "Delete", new { id = item.CourseCompletionID })
+                                                </p>}
+                            </div>
+
+                        }
+                    </div>*@
+            </div>
+
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#CourseCompTable').DataTable();
+        });
+    </script>
+}

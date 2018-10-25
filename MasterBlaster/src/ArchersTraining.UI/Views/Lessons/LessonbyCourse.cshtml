@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ArchersTraining.DATA.Lesson>
+
+@{
+    ViewBag.Title = "Lessons";
+}
+
+
+<div class="main">
+    <div class="container">
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+            <!-- BEGIN CONTENT -->
+            <div class="col-md-12">
+                <h2>@ViewBag.Title</h2>
+
+                <div class="content-page">
+                    @foreach (var item in Model)
+                    {
+                        <div class="search-result-item">
+                            <h4>@Html.ActionLink(item.LessonName, "Details", new { id = item.LessonID })</h4>
+                            <p>@Html.DisplayFor(modelItem => item.Introduction)</p>
+                        </div>
+                    }
+                    <p>
+                        @Html.ActionLink("Quiz", @Model.First().Cours.Name, null, new { @class = "btn" })
+                    </p>
+                </div>
+            </div>
+            <!-- END CONTENT -->
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $.cookie("courseId", null);
+    var url = window.location.pathname;
+    var id = url.substring(url.lastIndexOf('/') + 1);
+    $.cookie("courseId", id, { path: '/' });
+</script>

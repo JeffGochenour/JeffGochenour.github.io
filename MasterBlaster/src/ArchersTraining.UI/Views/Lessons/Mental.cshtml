@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "Mental";
+}
+
+<div class="main">
+    <div class="container">
+        <h3 class="text-center">Course Quiz</h3>
+        <h4 class="text-center">@ViewBag.Title</h4>
+
+        <form method="POST" name="myquiz">
+
+            <div class="qheader">
+                1.  Mental training uses the force?
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="a" name="question1"> True
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="b" name="question1"> False
+                </label>
+            </div>
+
+            <div class="qheader">
+                2.  Visualiztion is part of mental training?
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="c" name="question2"> True
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="d" name="question2"> False
+                </label>
+            </div>
+
+            <div class="qheader">
+                3.  Goals should be?
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="a" name="question3"> Unattainable
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="b" name="question3"> Of no value
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="c" name="question3"> Easily attainable
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="d" name="question3"> Desirable, difficult but attainable
+                </label>
+            </div>
+
+            <div class="qheader">
+                4.  Mental resilience requires?
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="a" name="question4"> A short memory
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="b" name="question4"> An ability to ball things up and shove the down deep
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="c" name="question4"> A willingness to give up
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="d" name="question4"> No heart
+                </label>
+            </div>
+        </form>
+        <form>
+            <div align="center">
+                <input class="btn" type="button" value="Submit" name="B1" onClick="gradeit()"> <input class="btn" type="button" value="Reset" name="B2" onClick="document.myquiz.reset()">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+    <script type="text/javascript" src="~/Scripts/quizconfig.js"></script>
+    <script>
+        var actualchoices = new Array()
+        document.cookie = "ready=yes"
+    </script>
+
+

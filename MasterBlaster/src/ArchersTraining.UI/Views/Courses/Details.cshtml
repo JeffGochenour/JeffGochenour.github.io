@@ -1,0 +1,49 @@
+﻿@model ArchersTraining.DATA.Course
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div class="main">
+    <div class="container">
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+            <!-- BEGIN CONTENT -->
+            <div class="col-md-12">
+
+
+                <div class="content-page">
+
+
+                    <div class="search-result-item">
+                        <h4 style="color: #E6400C; font-size: 17px;">
+                            @Html.DisplayFor(model => model.Name)
+                        </h4>
+                        <p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
+                            
+                        <p>Complete: @Html.DisplayFor(model => model.IsActive)</p>
+                        <p>@Html.DisplayNameFor(model => model.TrainingCategory.Name): @Html.DisplayFor(model => model.TrainingCategory.Name)</p>
+                        <p>
+                            @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
+                            @Html.ActionLink("Back to List", "Index")
+                        </p>
+                    </div>
+
+    
+                </div>
+            </div>
+            <!-- END CONTENT -->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

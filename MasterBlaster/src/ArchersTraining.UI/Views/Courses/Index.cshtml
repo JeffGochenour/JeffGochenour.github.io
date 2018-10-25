@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ArchersTraining.DATA.Course>
+
+    @{
+    ViewBag.Title = "Courses";
+    }
+
+
+
+    <div class="main">
+        <div class="container">
+            <!-- BEGIN SIDEBAR & CONTENT -->
+            <div class="row margin-bottom-40">
+                <!-- BEGIN CONTENT -->
+                <div class="col-md-12">
+                    <h2>@ViewBag.Title</h2>
+                    <p>
+                        @Html.ActionLink("Create New", "Create")
+                    </p>
+                    <div class="content-page">
+                        @foreach (var item in Model)
+                        {
+
+                        <div class="search-result-item">
+                            <h4>
+                                <a href="@Url.Action("LessonbyCourse", "Lessons", new { id=item.CourseID })" title="@item.Name lessons">@item.Name</a>
+                                @*@Html.DisplayFor(modelItem => item.Name)*@
+                            </h4>
+                            <p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(modelItem => item.Description)</p>
+                            <p>Active: @Html.DisplayFor(modelItem => item.IsActive)</p>
+                            <p>@Html.DisplayNameFor(model => model.TrainingCategory.Name): @Html.DisplayFor(modelItem => item.TrainingCategory.Name)</p>
+                            
+                            <p>
+                                @if (User.IsInRole("Admin") || (User.IsInRole("Coach")))
+                                {<a>@Html.ActionLink("Edit", "Edit", new { id = item.CourseID }) |</a>
+                                <a>@Html.ActionLink("Details", "Details", new { id = item.CourseID })</a>} 
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    @: |
+                                    <a>@Html.ActionLink("Delete", "Delete", new { id = item.CourseID })</a>}
+                            </p>
+                        </div>
+
+                        }
+                    </div>
+                </div>
+                <!-- END CONTENT -->
+            </div>
+        </div>
+    </div>
+

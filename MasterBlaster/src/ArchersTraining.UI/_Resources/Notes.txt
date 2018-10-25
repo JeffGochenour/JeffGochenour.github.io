@@ -1,0 +1,87 @@
+﻿Password - Jeff@6598
+Roles - admin@jeff.com
+		coach@jeff.com/Kisik Lee
+		archer@jeff.com/One Arrow
+		admin@jg.com/Jeff Gochenour		
+
+scaffold out code-
+1-what is problem/goal
+	add a lesson view record if?
+2-how do we do it?
+	what to check, what input etc(if details view fo rlesson is hit then {i do this})
+	-so when and how do i add a lesson completed record and a course completed record
+3-do it
+
+inbornimperative@gmail.com
+
+elmah route - whyerror
+
+var correctchoices = new Array()
+correctchoices[1] = 'c'
+correctchoices[2] = 'a'
+correctchoices[3] = 'c'
+correctchoices[4] = 'd'
+correctchoices[5] = 'b'
+correctchoices[6] = 'c'
+correctchoices[7] = 'b'
+correctchoices[8] = 'b'
+correctchoices[9] = 'c'
+correctchoices[10] = 'b'
+
+<div class="qheader">
+                1.  What is the difference between a jungle and a rain forest?
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="a" name="question1"> No difference. Simply two different ways in referring to the same thing.
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="b" name="question1"> A jungle in general receives less rain than a rain forest.
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="c" name="question1"> A jungle refers to the thickest area of a rain forest
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="d" name="question1"> A jungle and a rain forest each contain their own group of distinct plants and animals.
+                </label>
+            </div>
+
+			onClick="history.go(-1)"
+
+
+----------------------------------ejr feedback-----------------
+
+
+
+-update verbiage on "http://localhost:64650/Account/Register" page to be less annoying and demo-ish
+-consider changing 2-click register-confirm-then-login to a 1-click process.
+-stopgap until stored procedure setup to make userdetails record going with brand new registered user account 
+	-- just send email to admin to review and do it manually
+
+
+
+-when archer goes to LessonsByCourse, consider highlight/checking/greying out the "completed lessons"
+
+done-
+-review lockdown so archers can access courses page
+-review if new users are being auto-assigned role of archer
+-hide all nav for links to places current user isn't authorized to go to
+-add metadata for displayname for registermodel FN/LN
+-put some way of knowing and who is logged in
+-give way to log out.
+-provide a login/register link - new users need place to start
+
+
+
+
+
+
+
+
+

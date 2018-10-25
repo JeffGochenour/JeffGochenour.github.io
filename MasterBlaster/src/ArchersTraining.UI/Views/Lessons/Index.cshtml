@@ -1,0 +1,106 @@
+﻿@model IEnumerable<ArchersTraining.DATA.Lesson>
+
+@{
+    ViewBag.Title = "Lesson";
+
+}
+
+@section css {
+    <link href="@Url.Content("~/Content/assets/plugins/fancybox/source/jquery.fancybox.css")" rel="stylesheet">
+}
+
+
+
+
+<div class="main">
+    <div class="container">
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+            <!-- BEGIN CONTENT -->
+            <div class="col-md-12">
+                <h2>@ViewBag.Title</h2>
+                <p>
+                    @Html.ActionLink("Create New", "Create")
+                </p>
+                <div class="content-page">
+                    @{
+                        foreach (var item in Model)
+                        {
+
+
+                            <div class="search-result-item">
+                                <h4><a href="javascript:;">@Html.DisplayFor(modelItem => item.LessonName)</a></h4>
+                                <p>@Html.DisplayNameFor(model => model.Introduction): @Html.DisplayFor(modelItem => item.Introduction)</p>
+
+
+                                @if (item.VideoUrl != null)
+                                {
+                                    string[] embed = item.VideoUrl.Split('=');
+
+                                    <p class="youtubeIcon">
+                                        <a onclick="changeVideo('@embed[1]')"><img src="~/Content/assets/pages/img/youtube_icon.png" alt="Video Icon"></a>
+                                    </p>
+                                }
+
+                                <p><a class="youtubeIcon"></a></p>
+                                <p>@Html.DisplayNameFor(model => model.PdfFileName): @Html.DisplayFor(modelItem => item.PdfFileName)</p>
+                                <p>Active: @Html.DisplayFor(modelItem => item.IsActive)</p>
+                                <p>@Html.DisplayNameFor(model => model.Cours.Name): @Html.DisplayFor(modelItem => item.Cours.Name)</p>
+
+                                <p>
+                                    <a>@Html.ActionLink("Edit", "Edit", new { id = item.LessonID }) |</a>
+                                    <a>@Html.ActionLink("Details", "Details", new { id = item.LessonID })</a>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        @: |
+                                        <a>@Html.ActionLink("Delete", "Delete", new { id = item.LessonID })</a>}
+                                </p>
+                            </div>
+
+                        }
+                    }
+                </div>
+            </div>
+            <!-- END CONTENT -->
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <iframe id="iframeYoutube" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $("#myModal").on("hidden.bs.modal", function () {
+                $("#iframeYoutube").attr("src", "#");
+            })
+        })
+
+        function changeVideo(vId) {
+            var iframe = document.getElementById("iframeYoutube");
+            iframe.src = "https://www.youtube.com/embed/" + vId;
+
+            $("#myModal").modal("show");
+        }
+    </script>
+}

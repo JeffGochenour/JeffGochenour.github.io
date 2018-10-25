@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ArchersTraining.DATA.UserDetail>
+
+@{
+    ViewBag.Title = "User Profiles";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@if (User.IsInRole("Admin"))
+{
+<p>
+    @Html.ActionLink("Add Profile", "Create")
+</p>}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AspNetUser.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TopImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BackImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FrontImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="@Url.Action("Details", new { id = item.ID })" title="@item.AspNetUser.FirstName @item.AspNetUser.LastName full view">@item.AspNetUser.FirstName</a>
+                @*@Html.DisplayFor(modelItem => item.AspNetUser.FirstName)*@
+            </td>
+            <td>
+                <img src="@Url.Content("~/Content/assets/pages/img/user/"+item.TopImage)" alt="@item.TopImage" height="50" />
+                @*@Html.DisplayFor(modelItem => item.TopImage)*@
+            </td>
+            <td>
+                <img src="@Url.Content("~/Content/assets/pages/img/user/"+item.BackImage)" alt="@item.BackImage" height="50" />
+                @*@Html.DisplayFor(modelItem => item.BackImage)*@
+            </td>
+            <td>
+                <img src="@Url.Content("~/Content/assets/pages/img/user/"+item.FrontImage)" alt="@item.FrontImage " height="50" />
+                @*@Html.DisplayFor(modelItem => item.FrontImage)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                <p>@Html.ActionLink("Edit", "Edit", new { id = item.ID })</p>
+                @if (User.IsInRole("Admin")){
+                    @: |
+               @Html.ActionLink("Delete", "Delete", new { id = item.ID })}
+            </td>
+        </tr>
+    }
+</table>

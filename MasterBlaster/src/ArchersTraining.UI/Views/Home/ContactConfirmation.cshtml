@@ -1,0 +1,43 @@
+﻿@model ArchersTraining.UI.Models.ContactViewModel
+@{
+    ViewBag.Title = "Contact";
+}
+<div id="contact-page" class="container">
+    <div class="bg">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="title text-center"><strong>Contact Us</strong></h2>
+                <div id="gmap" class="contact-map google-maps">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3107.6962400227694!2d-104.79788998465138!3d38.839416979579696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x871345a7ae64eebf%3A0xc5a3ee05da14ea12!2sU.S.+Olympic+Training+Center!5e0!3m2!1sen!2sus!4v1508340542477" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>Thank you for contacting us, @Model.Name!  We will get back to you within 24 hrs.</h2>
+            </div>
+            <div class="col-sm-4">
+                <div class="contact-info">
+                    <h2 class="title text-center">Contact Info</h2>
+                    <address>
+                        <p>U.S. Olympic Training Center</p>
+                        <p>#1 Archery Plaza</p>
+                        <p>Center X, Mo 300X</p>
+                        <p>Phone: 816-456-2011</p>
+                        <p>Email: jeffgochenour@outlook.com</p>
+                    </address>
+                    @*<div class="social-networks">
+                            <h2 class="title text-center">Social Networking</h2>
+                            <ul>
+                                <li><a href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                                <li><a href="" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

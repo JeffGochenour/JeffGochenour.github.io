@@ -1,0 +1,29 @@
+﻿@model ArchersTraining.DATA.UserDetail
+
+@{
+    ViewBag.Title = "Profile - " + Model.AspNetUser.FirstName + " " + Model.AspNetUser.LastName;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="col-md-12">
+    @*<h4>UserDetail</h4>
+    <hr />*@
+    @*<dl class="dl-horizontal">*@
+       
+        @*<div class="boxed">@Html.DisplayNameFor(model => model.AspNetUser.FirstName): @Html.DisplayFor(model => model.AspNetUser.FirstName) @Html.DisplayFor(model => model.AspNetUser.LastName)</div>*@
+    
+        <div class="boxed">@Html.DisplayNameFor(model => model.Notes): @Html.DisplayFor(modelItem => Model.Notes)</div>
+
+       
+        <div>@Html.DisplayNameFor(model => model.TopImage): <img src="@Url.Content("~/Content/assets/pages/img/user/" + Model.TopImage)" target="_blank" /></div>
+        <div>@Html.DisplayNameFor(model => model.BackImage): <img src="@Url.Content("~/Content/assets/pages/img/user/" + Model.BackImage)" target="_blank" /></div>
+        <div>@Html.DisplayNameFor(model => model.FrontImage): <img src="@Url.Content("~/Content/assets/pages/img/user/" + Model.FrontImage)" target="_blank" /></div>
+
+       
+    @*</dl>*@
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

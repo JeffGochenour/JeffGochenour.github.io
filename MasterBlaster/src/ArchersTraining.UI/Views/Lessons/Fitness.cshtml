@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "Fitness";
+}
+
+<div class="main">
+    <div class="container">
+        <h3 class="text-center">Course Quiz</h3>
+        <h4 class="text-center">@ViewBag.Title</h4>
+
+        <form method="POST" name="myquiz">
+
+            <div class="qheader">
+                1.  What is an effective archery exercise tool?
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="a" name="question1"> Logs
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="b" name="question1"> Bands
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="c" name="question1"> Lawnmower
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="d" name="question1"> The couch
+                </label>
+            </div>
+
+            <div class="qheader">
+                2.  What is a beneficial food?
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="a" name="question2"> Twinkees
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="b" name="question2"> Chips
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="c" name="question2"> Pasture raised beef
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="d" name="question2"> Candy bar
+                </label>
+            </div>
+
+            <div class="qheader">
+                3.  How is the core targeted?
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="a" name="question3"> Eating cup cakes
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="b" name="question3"> Drinking soda
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="c" name="question3"> Watching TV
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="d" name="question3"> Deadlifts
+                </label>
+            </div>
+
+            <div class="qheader">
+                4.  What is a critical to keep healthy?
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="a" name="question4"> Shoulder
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="b" name="question4"> U joint
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="c" name="question4"> Big Toe
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="d" name="question4"> Left Ear
+                </label>
+            </div>
+        </form>
+        <form>
+            <div align="center">
+                <input class="btn" type="button" value="Submit" name="B1" onClick="gradeit()"> <input class="btn" type="button" value="Reset" name="B2" onClick="document.myquiz.reset()">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+    <script type="text/javascript" src="~/Scripts/quizconfig.js"></script>
+    <script>
+        var actualchoices = new Array()
+        document.cookie = "ready=yes"
+    </script>
+
+

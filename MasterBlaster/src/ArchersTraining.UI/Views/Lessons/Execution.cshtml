@@ -1,0 +1,97 @@
+﻿<div class="main">
+    <div class="container">
+        <h3 class="text-center">Course Quiz</h3>
+        <h4 class="text-center">@ViewBag.Title</h4>
+
+        <form method="POST" name="myquiz">
+
+            <div class="qheader">
+                1.  The best foot placement is?
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="a" name="question1"> What you think the pro's do
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="b" name="question1"> The placement you can reproduce
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="c" name="question1"> Cross legged
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="d" name="question1"> What your buddy does
+                </label>
+            </div>
+
+            <div class="qheader">
+                2.  Your anchor should be loose against your face?
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="c" name="question2"> True
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="d" name="question2"> False
+                </label>
+            </div>
+
+            <div class="qheader">
+                3.  The best release is "ripped"" when you drive by the center "x"?
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="c" name="question3"> True
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="d" name="question3"> False
+                </label>
+            </div>
+
+            <div class="qheader">
+                4.  A type of mechanical release is?
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="a" name="question4"> Tension activated
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="b" name="question4"> Trunk
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="c" name="question4"> Prison
+                </label>
+            </div>
+            <div class="radio qselections">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" value="d" name="question4"> Iphone
+                </label>
+            </div>
+        </form>
+        <form>
+            <div align="center">
+                <input class="btn" type="button" value="Submit" name="B1" onClick="gradeit()"> <input class="btn" type="button" value="Reset" name="B2" onClick="document.myquiz.reset()">
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/Scripts/quizconfig.js"></script>
+<script>
+    var actualchoices = new Array()
+    document.cookie = "ready=yes"
+</script>
+

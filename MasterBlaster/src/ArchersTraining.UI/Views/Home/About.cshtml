@@ -1,0 +1,211 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+@section css {
+    <link href="@Url.Content("~/Content/assets/plugins/fancybox/source/jquery.fancybox.css")" rel="stylesheet">
+}
+
+
+<div class="main">
+    <div class="container">
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+            <!-- BEGIN CONTENT -->
+            <div class="col-md-12 col-sm-12">
+                <h1>About Us</h1>
+                <div class="content-page">
+                    <div class="row margin-bottom-30">
+                        <!-- BEGIN INFO BLOCK -->
+                        <div class="col-md-7">
+                            <h2 class="no-top-space">Our Mission</h2>
+                            <p>Archery Training's goal is to create an inspiring training and practicing environment for Junior Olympic Archers and FITA target archers.</p>
+                            <p>Since 1995, Jeff and Kisik Lee have coached and trained over 3,600 archers, including lots of Texas state and southern region champions, several national champions, Jr US Team members, and one wonderful Paralympic bronze medallist!</p>
+                            <p>Joining Archery Training Center is often the next step for archers who loved archery at summer camp, in the Boy Scouts or 4H, or in school through Olympic Archery in Schools (OAS), National Archery in the Schools Program (NASP), or an After School Archery Program (ASAP). These organizations, send us their most focused and passionate archers!</p>
+                            <p>We welcome all levels and ages of archers, and can take you as far as you want to go!</p>
+                            <!-- BEGIN LISTS -->
+                            <div class="row front-lists-v1">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled margin-bottom-20">
+                                        <li><i class="fa fa-check"></i> Compound</li>
+                                        <li><i class="fa fa-check"></i> Recurve </li>
+                                        <li><i class="fa fa-check"></i> Fitness and health</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fa fa-check"></i> Beginner to Advanced</li>
+                                        <li><i class="fa fa-check"></i> Tournament Prep</li>
+                                        <li><i class="fa fa-check"></i> Mental Training</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- END LISTS -->
+                        </div>
+                        <!-- END INFO BLOCK -->
+                        <!-- BEGIN CAROUSEL -->
+                        <div class="col-md-5 front-carousel">
+                            <div id="myCarousel" class="carousel slide">
+                                <!-- Carousel items -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="~/Content/assets/pages/img/pics/Topimage2.jpg" alt="">
+                                        <div class="carousel-caption">
+                                            <p>Smack that bow</p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="~/Content/assets/pages/img/pics/Frontimage2.jpg" alt="">
+                                        <div class="carousel-caption">
+                                            <p>Shoot that thing</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Carousel nav -->
+                                <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                                    <i class="fa fa-angle-left"></i>
+                                </a>
+                                <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- END CAROUSEL -->
+                    </div>
+                    <div class="row margin-bottom-40">
+                        <!-- BEGIN TESTIMONIALS -->
+                        <div class="col-md-7 testimonials-v1">
+                            <h2>Those With Us</h2>
+                            <div id="myCarousel1" class="carousel slide">
+                                <!-- Carousel items -->
+                                <div class="carousel-inner">
+                                    <div class="active item">
+                                        <blockquote><p>The new HALON 32 is a longer version of the award-winning HALON, providing an enhanced string angle and superior stability, while delivering speeds up to 350 fps.</p></blockquote>
+                                        <div class="carousel-info">
+                                            @*<img class="pull-left" src="assets/pages/img/people/img1-small.jpg" alt="">*@
+                                            <div class="pull-left">
+                                                <span class="testimonials-name">Halon 32</span>
+                                                <span class="testimonials-post">Mathews</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <blockquote><p>Year after year, the world’s best archers trust Hoyt bows to do what they do best—win. And year after year, Hoyt bows deliver—dominating tournament circuits and topping podiums worldwide.</p></blockquote>
+                                        <div class="carousel-info">
+                                            @*<img class="pull-left" src="assets/pages/img/people/img5-small.jpg" alt="">*@
+                                            <div class="pull-left">
+                                                <span class="testimonials-name">Prevail</span>
+                                                <span class="testimonials-post">Hoyt</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <blockquote><p>The Reign 6 is more than just a high performing bow projecting arrows at 350 feet per second. We have refined and harmonized our SmartBow technologies to work flawlessly together providing the ultimate in performance, accuracy, and tunability</p></blockquote>
+                                        <div class="carousel-info">
+                                            @*<img class="pull-left" src="assets/pages/img/people/img2-small.jpg" alt="">*@
+                                            <div class="pull-left">
+                                                <span class="testimonials-name">Reign 6</span>
+                                                <span class="testimonials-post">Bowtech</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Carousel nav -->
+                                <a class="left-btn" href="#myCarousel1" data-slide="prev"></a>
+                                <a class="right-btn" href="#myCarousel1" data-slide="next"></a>
+                            </div>
+                        </div>
+                        <!-- END TESTIMONIALS -->
+                        <!-- BEGIN PROGRESS BAR -->
+                        <div class="col-md-5 front-skills">
+                            <h2 class="block">The Way</h2>
+                            <span>Empty Mind</span>
+                            <div class="progress">
+                                <div role="progressbar" class="progress-bar" style="width: 90%;"></div>
+                            </div>
+                            <span>Goal</span>
+                            <div class="progress">
+                                <div role="progressbar" class="progress-bar" style="width: 8%;"></div>
+                            </div>
+                            <span>technique</span>
+                            <div class="progress">
+                                <div role="progressbar" class="progress-bar" style="width: 2%;"></div>
+                            </div>
+                        </div>
+                        <!-- END PROGRESS BAR -->
+                    </div>
+                    <div class="row front-team">
+                        <ul class="list-unstyled">
+                            <li class="col-md-3">
+                                <div class="thumbnail">
+                                    <img alt="" src="assets/pages/img/people/img1-large.jpg">
+                                    <h3>
+                                        <strong>Empty One</strong>
+                                        <small>Full of Nothing</small>
+                                    </h3>
+                                    <p>By seeing that empty just means that thoughts are actually empty of content, or of essence is enough. They do not stand alone separate or objectively from everything else. </p>
+                                    <ul class="social-icons social-icons-color">
+                                        <li><a class="facebook" data-original-title="Facebook" href="javascript:;"></a></li>
+                                        <li><a class="twitter" data-original-title="Twitter" href="javascript:;"></a></li>
+                                        <li><a class="googleplus" data-original-title="Goole Plus" href="javascript:;"></a></li>
+                                        <li><a class="linkedin" data-original-title="Linkedin" href="javascript:;"></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="thumbnail">
+                                    <img alt="" src="assets/pages/img/people/img4-large.jpg">
+                                    <h3>
+                                        <strong>Mind Like Water</strong>
+                                        <small>Calm Archer</small>
+                                    </h3>
+                                    <p>Water. The vital element that is the difference between life and death. At one moment life-giving and nurturing, only to change in the blink of an eye to a chaotic, destructive force of nature.</p>
+                                    <ul class="social-icons social-icons-color">
+                                        <li><a class="facebook" data-original-title="Facebook" href="javascript:;"></a></li>
+                                        <li><a class="twitter" data-original-title="Twitter" href="javascript:;"></a></li>
+                                        <li><a class="googleplus" data-original-title="Goole Plus" href="javascript:;"></a></li>
+                                        <li><a class="linkedin" data-original-title="Linkedin" href="javascript:;"></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="thumbnail">
+                                    <img alt="" src="assets/pages/img/people/img2-large.jpg">
+                                    <h3>
+                                        <strong>Mushin</strong>
+                                        <small>Empty Archer</small>
+                                    </h3>
+                                    <p>Mushin is achieved when a person's mind is free from thoughts of anger, fear, or ego during combat or everyday life. There is an absence of discursive thought and judgment, so the person is totally free to act and react towards an opponent without hesitation and without disturbance from such thoughts.</p>
+                                    <ul class="social-icons social-icons-color">
+                                        <li><a class="facebook" data-original-title="Facebook" href="javascript:;"></a></li>
+                                        <li><a class="twitter" data-original-title="Twitter" href="javascript:;"></a></li>
+                                        <li><a class="googleplus" data-original-title="Goole Plus" href="javascript:;"></a></li>
+                                        <li><a class="linkedin" data-original-title="Linkedin" href="javascript:;"></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="thumbnail">
+                                    <img alt="" src="assets/pages/img/people/img5-large.jpg">
+                                    <h3>
+                                        <strong>No Mind</strong>
+                                        <small>Archer</small>
+                                    </h3>
+                                    <p>The life of man is what it is. That which is, is. All the trouble arises by having a conception of it. Mind comes in. It has a conception. All trouble follows. </p>
+                                    <ul class="social-icons social-icons-color">
+                                        <li><a class="facebook" data-original-title="Facebook" href="javascript:;"></a></li>
+                                        <li><a class="twitter" data-original-title="Twitter" href="javascript:;"></a></li>
+                                        <li><a class="googleplus" data-original-title="Goole Plus" href="javascript:;"></a></li>
+                                        <li><a class="linkedin" data-original-title="Linkedin" href="javascript:;"></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- END CONTENT -->
+        </div>
+        <!-- END SIDEBAR & CONTENT -->
+    </div>
+</div>
